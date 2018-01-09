@@ -1,4 +1,4 @@
-package com.note.model;
+package com.liukaijv.note.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.note.service;
+package com.liukaijv.note.service;
 
 public interface IUserService {
 }

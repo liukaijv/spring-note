@@ -1,4 +1,4 @@
-package com.note.controller;
+package com.liukaijv.note.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
