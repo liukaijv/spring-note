@@ -36,12 +36,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:com/liukaijv/note/mapping/*.xml"></property>
+        <property name="mapperLocations" value="classpath*:/sqlMapperXml/*.xml"></property>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.liukaijv.note.dao"/>
+        <property name="basePackage" value="com.liukaijv.note.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 
@@ -66,7 +66,7 @@
 
     <!-- 配置切面 -->
     <aop:config expose-proxy="true" proxy-target-class="true">
-        <aop:advisor advice-ref="transactionAdvice" pointcut="execution(* com.liukaijv.service..*.*(..))"/>
+        <aop:advisor advice-ref="transactionAdvice" pointcut="execution(* com.liukaijv.note.service..*.*(..))"/>
     </aop:config>
 
 </beans>
