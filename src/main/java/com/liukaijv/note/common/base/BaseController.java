@@ -1,7 +1,5 @@
 package com.liukaijv.note.common.base;
 
-import java.lang.StringBuilder;
-
 public abstract class BaseController {
 
     public Object error(String msg) {
