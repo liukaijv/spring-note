@@ -9,6 +9,6 @@
     <input type="submit" value="Upload"> Press here to upload the file!
 </form>
 
-<a href="download?filename=1.jpg">下载</a>
+<a href="download/1.jpg">下载</a>
 </body>
 </html>

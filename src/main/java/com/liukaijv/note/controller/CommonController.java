@@ -10,10 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
@@ -63,15 +60,15 @@ public class CommonController extends BaseController {
      * @return
      * @throws Exception
      */
-    @GetMapping("/download")
-    public ResponseEntity<Resource> download(@RequestParam String filename, HttpServletRequest request) throws Exception {
+    @GetMapping("/download/{filename:.+}")
+    public ResponseEntity<Resource> download(@PathVariable String filename, HttpServletRequest request) throws Exception {
 
         String downloadPath = request.getServletContext().getRealPath(Config.DOWNLOAD_DIR);
 
         File file = new File(downloadPath, filename);
 
         if (!file.exists()) {
-            //todo错误处理
+//            throw new Exception("file not exist");
         }
 
         return this.download(file);

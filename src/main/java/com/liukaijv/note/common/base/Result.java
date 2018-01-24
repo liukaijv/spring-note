@@ -14,6 +14,8 @@ public class Result implements Serializable {
 
     private Object data = null;
 
+    private int code;
+
     public void setSuccess(boolean success) {
         this.success = success;
     }
@@ -36,6 +38,14 @@ public class Result implements Serializable {
 
     public Object getData() {
         return this.data;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public int getCode() {
+        return this.code;
     }
 
 }
