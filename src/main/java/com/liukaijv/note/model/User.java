@@ -17,6 +17,10 @@ public class User implements Serializable {
 
     private boolean isAdmin;
 
+    private String salt;
+
+    private boolean locked;
+
     private Date createAt;
 
     private Date updateAt;
@@ -69,5 +73,20 @@ public class User implements Serializable {
         this.isAdmin = isAdmin;
     }
 
+    public String getSalt() {
+        return this.salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getCredentialsSalt() {
+        return username + salt;
+    }
+
+    public boolean getLocked() {
+        return this.locked;
+    }
 
 }

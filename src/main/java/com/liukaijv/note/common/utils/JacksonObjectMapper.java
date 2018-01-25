@@ -1,4 +1,4 @@
-package com.liukaijv.note.common.exception;
+package com.liukaijv.note.common.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;

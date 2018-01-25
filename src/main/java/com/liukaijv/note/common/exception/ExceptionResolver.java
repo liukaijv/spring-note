@@ -2,6 +2,7 @@ package com.liukaijv.note.common.exception;
 
 import com.liukaijv.note.common.base.Result;
 import com.liukaijv.note.common.utils.HttpUtils;
+import com.liukaijv.note.common.utils.JacksonObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanMap;
 import org.springframework.stereotype.Component;
