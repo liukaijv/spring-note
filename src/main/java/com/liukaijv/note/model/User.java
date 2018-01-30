@@ -1,11 +1,10 @@
 package com.liukaijv.note.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
-import java.util.Date;
 
-public class User implements Serializable {
-
-    private int id;
+public class User extends Model implements Serializable {
 
     private String email;
 
@@ -13,25 +12,14 @@ public class User implements Serializable {
 
     private String username;
 
+    @JsonIgnore
     private String password;
 
-    private boolean isAdmin;
-
+    @JsonIgnore
     private String salt;
 
+    @JsonIgnore
     private boolean locked;
-
-    private Date createAt;
-
-    private Date updateAt;
-
-    public int getId() {
-        return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getEmail() {
         return this.email;
@@ -65,14 +53,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public boolean getIsAdmin() {
-        return this.isAdmin;
-    }
-
-    public void setIsAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
     public String getSalt() {
         return this.salt;
     }
@@ -81,12 +61,13 @@ public class User implements Serializable {
         this.salt = salt;
     }
 
-    public String getCredentialsSalt() {
-        return username + salt;
-    }
-
     public boolean getLocked() {
         return this.locked;
     }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
+    }
+
 
 }
